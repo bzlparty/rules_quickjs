@@ -1,0 +1,19 @@
+module(
+    name = "rules_quickjs",
+    version = "0.0.0",
+    compatibility_level = 1,
+)
+
+bazel_dep(name = "bazel_skylib", version = "1.5.0")
+bazel_dep(name = "aspect_rules_js", version = "1.34.1")
+bazel_dep(name = "quickjs", version = "0.0.0")
+
+git_override(
+    module_name = "quickjs",
+    remote = "git@github.com:bellard/quickjs.git",
+    commit = "9b587c461b06af06e78070b86d9b99da7d863065",
+    patches = [
+        "//vendor:quickjs_build_dot_bazel.patch",
+        "//vendor:quickjs_module_dot_bazel.patch",
+    ],
+)
