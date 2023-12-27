@@ -1,1 +1,3 @@
 bazel-*
+*.tar.gz
+release_notes.md
