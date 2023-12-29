@@ -29,4 +29,4 @@ bazel run @bzlparty_quickjs//:qjs
 
 ## License
 
-GNU GPL 3.0(/LICENSE)
+[GNU GPL 3.0](/LICENSE)
