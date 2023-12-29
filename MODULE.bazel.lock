@@ -1097,7 +1097,7 @@
   "moduleExtensions": {
     "//quickjs:extensions.bzl%quickjs_extension": {
       "general": {
-        "bzlTransitiveDigest": "gtvN/AnVo0P+OC0j1IEifA+50GmqrVIHdGqHgxfTEmQ=",
+        "bzlTransitiveDigest": "3PTledDNY99L5sah0M5jmzhVNlc+P+q6l0Wzu4IWZPk=",
         "accumulatedFileDigests": {},
         "envVariables": {},
         "generatedRepoSpecs": {
