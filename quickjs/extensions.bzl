@@ -35,5 +35,5 @@ quickjs_repo = repository_rule(
 )
 
 quickjs_extension = module_extension(
-    implementation = lambda _: quickjs_repo(name = "quickjs", version = "0.3.0"),
+    implementation = lambda _: quickjs_repo(name = "bzlparty_quickjs", version = "0.3.0"),
 )

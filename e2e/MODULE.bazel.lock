@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 3,
-  "moduleFileHash": "faa5b9658f410943998e585ed6cecf3b48a610983a78c3122ba91dae40cfd38f",
+  "moduleFileHash": "ea85f8fff7c32cb6cdf8a1311fcc04d3bb87eb3f3e953eafa0fc6f3e76081135",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -14,7 +14,7 @@
   },
   "localOverrideHashes": {
     "bazel_tools": "922ea6752dc9105de5af957f7a99a6933c0a6a712d23df6aad16a9c399f7e787",
-    "bzlparty_rules_quickjs": "667c635c25f309e9b94f9c9adcbcee7c8824c5edc0ae92c5a8138c1a7a08a08f"
+    "bzlparty_rules_quickjs": "164158aef42b91c8d875138b742919a6d608e1aa65b6f17c46a776bfe05a3fdc"
   },
   "moduleDepGraph": {
     "<root>": {
@@ -49,7 +49,7 @@
             "column": 34
           },
           "imports": {
-            "quickjs": "quickjs"
+            "bzlparty_quickjs": "bzlparty_quickjs"
           },
           "devImports": [],
           "tags": [],
@@ -1032,15 +1032,15 @@
   "moduleExtensions": {
     "@@bzlparty_rules_quickjs~override//quickjs:extensions.bzl%quickjs_extension": {
       "general": {
-        "bzlTransitiveDigest": "FvE1FXs1hNHJnuHnc/9WtXu/tTR9+NCR0nJuYmgk+Es=",
+        "bzlTransitiveDigest": "UR60HYQutyD5qjaM5A+P8q3LgSJ6DANu5zTxgB1f0hk=",
         "accumulatedFileDigests": {},
         "envVariables": {},
         "generatedRepoSpecs": {
-          "quickjs": {
+          "bzlparty_quickjs": {
             "bzlFile": "@@bzlparty_rules_quickjs~override//quickjs:extensions.bzl",
             "ruleClassName": "quickjs_repo",
             "attributes": {
-              "name": "bzlparty_rules_quickjs~override~quickjs_extension~quickjs",
+              "name": "bzlparty_rules_quickjs~override~quickjs_extension~bzlparty_quickjs",
               "version": "0.3.0"
             }
           }

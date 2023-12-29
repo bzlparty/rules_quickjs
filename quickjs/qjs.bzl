@@ -34,7 +34,7 @@ qjs_binary = rule(
             allow_files = True,
         ),
         "_binary": attr.label(
-            default = "@quickjs//:qjs",
+            default = "@bzlparty_quickjs//:qjs",
             executable = True,
             cfg = "exec",
             allow_single_file = True,

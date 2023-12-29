@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 3,
-  "moduleFileHash": "667c635c25f309e9b94f9c9adcbcee7c8824c5edc0ae92c5a8138c1a7a08a08f",
+  "moduleFileHash": "164158aef42b91c8d875138b742919a6d608e1aa65b6f17c46a776bfe05a3fdc",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -34,7 +34,7 @@
             "column": 34
           },
           "imports": {
-            "quickjs": "quickjs"
+            "bzlparty_quickjs": "bzlparty_quickjs"
           },
           "devImports": [],
           "tags": [],
@@ -1017,15 +1017,15 @@
   "moduleExtensions": {
     "//quickjs:extensions.bzl%quickjs_extension": {
       "general": {
-        "bzlTransitiveDigest": "ZP/sdzMwXaMJ9QaULHHB3ZBO4WY6q8swIQPTA8PFyZo=",
+        "bzlTransitiveDigest": "UR60HYQutyD5qjaM5A+P8q3LgSJ6DANu5zTxgB1f0hk=",
         "accumulatedFileDigests": {},
         "envVariables": {},
         "generatedRepoSpecs": {
-          "quickjs": {
+          "bzlparty_quickjs": {
             "bzlFile": "@@//quickjs:extensions.bzl",
             "ruleClassName": "quickjs_repo",
             "attributes": {
-              "name": "_main~quickjs_extension~quickjs",
+              "name": "_main~quickjs_extension~bzlparty_quickjs",
               "version": "0.3.0"
             }
           }
