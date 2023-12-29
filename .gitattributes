@@ -1,3 +1,5 @@
-e2e     export-ignore
-.git*   export-ignore
-*.sh    export-ignore
+*.sh        export-ignore
+.bazel*     export-ignore
+.git*       export-ignore
+e2e         export-ignore
+examples    export-ignore
