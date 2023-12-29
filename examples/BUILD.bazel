@@ -1,0 +1,6 @@
+load("//quickjs:qjs.bzl", "qjs_binary")
+
+qjs_binary(
+  name = "hello_world",
+  entry_point = ":hello_world.js",
+)
