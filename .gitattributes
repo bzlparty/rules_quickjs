@@ -1,3 +1,2 @@
-vendor  export-ignore
 .git*   export-ignore
 *.sh    export-ignore
