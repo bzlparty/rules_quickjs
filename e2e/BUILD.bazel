@@ -1,0 +1,6 @@
+load("@bzlparty_rules_quickjs//quickjs:qjs.bzl", "qjs_binary")
+
+qjs_binary(
+  name = "info",
+  entry_point = ":info.js",
+)
