@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 3,
-  "moduleFileHash": "bbacc6116dc54e1a147c8696903a1c320bec568e2997256ab5e63187315ad708",
+  "moduleFileHash": "667c635c25f309e9b94f9c9adcbcee7c8824c5edc0ae92c5a8138c1a7a08a08f",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -17,13 +17,31 @@
   },
   "moduleDepGraph": {
     "<root>": {
-      "name": "rules_quickjs",
+      "name": "bzlparty_rules_quickjs",
       "version": "0.0.0",
       "key": "<root>",
-      "repoName": "rules_quickjs",
+      "repoName": "bzlparty_rules_quickjs",
       "executionPlatformsToRegister": [],
       "toolchainsToRegister": [],
-      "extensionUsages": [],
+      "extensionUsages": [
+        {
+          "extensionBzlFile": "@bzlparty_rules_quickjs//quickjs:extensions.bzl",
+          "extensionName": "quickjs_extension",
+          "usingModule": "<root>",
+          "location": {
+            "file": "@@//:MODULE.bazel",
+            "line": 10,
+            "column": 34
+          },
+          "imports": {
+            "quickjs": "quickjs"
+          },
+          "devImports": [],
+          "tags": [],
+          "hasDevUseExtension": false,
+          "hasNonDevUseExtension": true
+        }
+      ],
       "deps": {
         "bazel_skylib": "bazel_skylib@1.5.0",
         "aspect_rules_js": "aspect_rules_js@1.34.1",
@@ -997,6 +1015,23 @@
     }
   },
   "moduleExtensions": {
+    "//quickjs:extensions.bzl%quickjs_extension": {
+      "general": {
+        "bzlTransitiveDigest": "ZP/sdzMwXaMJ9QaULHHB3ZBO4WY6q8swIQPTA8PFyZo=",
+        "accumulatedFileDigests": {},
+        "envVariables": {},
+        "generatedRepoSpecs": {
+          "quickjs": {
+            "bzlFile": "@@//quickjs:extensions.bzl",
+            "ruleClassName": "quickjs_repo",
+            "attributes": {
+              "name": "_main~quickjs_extension~quickjs",
+              "version": "0.3.0"
+            }
+          }
+        }
+      }
+    },
     "@@apple_support~1.5.0//crosstool:setup.bzl%apple_cc_configure_extension": {
       "general": {
         "bzlTransitiveDigest": "pMLFCYaRPkgXPQ8vtuNkMfiHfPmRBy6QJfnid4sWfv0=",
