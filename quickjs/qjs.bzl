@@ -1,3 +1,11 @@
+"""
+# Rules for qjs
+
+```starlark
+load("@bzlparty_rules_quickjs//quickjs:qjs.bzl", "qjs_binary")
+```
+"""
+
 load("@aspect_bazel_lib//lib:lists.bzl", "filter")
 load("@aspect_rules_js//js:libs.bzl", "js_binary_lib", "js_lib_helpers")
 
@@ -64,9 +72,28 @@ _pick_attrs = [
 ]
 
 _ATTRS.update(filter(_is_key_in(_pick_attrs), js_binary_lib.attrs.items()))
+_DOCS = """\
+Execute a JavaScript program on QuickJS.
+
+```starlark
+qjs_binary(
+    name = "hello_world",
+    entry_point = ":hello_world.js",
+)
+```
+
+Run the target:
+
+```bash
+bazel run //path/to:hello_world
+```
+
+`qjs_binary` is meant to be similar to [`js_binary`]() and therefore shares some of its attributes.
+"""
 
 qjs_binary = rule(
     _qjs_binary_impl,
+    doc = _DOCS,
     attrs = _ATTRS,
     executable = True,
 )

@@ -1,4 +1,6 @@
-# This file was generated from https://github.com/quickjs-ng/quickjs/releases
+"""Tool Versions
+This file was generated from https://github.com/quickjs-ng/quickjs/releases
+"""
 TOOL_VERSIONS = {
     "0.1.0": {
         "darwin": "sha384-twBG8npD6Y5PmIcZ/MvmxRkp3nNaCqOyxjG+h/JobYT8+nzzQATX+pIsUcTgOMN4",

@@ -1,6 +1,12 @@
 <!-- Generated with Stardoc: http://skydoc.bazel.build -->
 
 
+# Rules for qjs
+
+```starlark
+load("@bzlparty_rules_quickjs//quickjs:qjs.bzl", "qjs_binary")
+```
+
 
 <a id="qjs_binary"></a>
 
@@ -11,6 +17,22 @@ qjs_binary(<a href="#qjs_binary-name">name</a>, <a href="#qjs_binary-data">data<
            <a href="#qjs_binary-include_transitive_sources">include_transitive_sources</a>)
 </pre>
 
+Execute a JavaScript program on QuickJS.
+
+```starlark
+qjs_binary(
+    name = "hello_world",
+    entry_point = ":hello_world.js",
+)
+```
+
+Run the target:
+
+```bash
+bazel run //path/to:hello_world
+```
+
+`qjs_binary` is meant to be similar to [`js_binary`]() and therefore shares some of its attributes.
 
 
 **ATTRIBUTES**

@@ -1,3 +1,5 @@
+"Extensions"
+
 load(":version.bzl", "TOOL_VERSIONS")
 
 def _get_download_url(version, platform):
