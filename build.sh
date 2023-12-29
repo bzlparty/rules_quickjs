@@ -6,16 +6,6 @@ TAG=${GITHUB_REF_NAME}
 VERSION=${TAG:1}
 PREFIX="${NAME}-${VERSION}"
 RULES_ARCHIVE="${NAME}-${TAG}.tar.gz"
-BINS_ARCHIVE="quickjs-${host,}-$(uname -m).tar.gz"
-
-echo "build: Create QuickJS Binaries"
-echo "${PREFIX}" > ./vendor/quickjs/VERSION
-make -C ./vendor/quickjs qjs qjsc
-
-echo -n "build: Create Binaries Archive"
-tar czf "$BINS_ARCHIVE" -C vendor/quickjs qjs qjsc
-BINS_SHA=$(shasum -a 256 $BINS_ARCHIVE | awk '{print $1}')
-echo " ... done ($BINS_ARCHIVE: $BINS_SHA)"
 
 echo -n "build: Create Rules Archive"
 git archive --format=tar --prefix=${PREFIX}/ ${TAG} | gzip >$RULES_ARCHIVE
@@ -25,18 +15,16 @@ echo " ... done ($RULES_ARCHIVE: $RULES_SHA)"
 echo -n "build: Creaet Release Notes"
 cat > release_notes.md <<EOF
 
-## Usage
+## Installation
 
-### Install from BCR
-
-\`\`\`starlark
-bazel_dep(name = "bzlparty_rules_quickjs", version = "${VERSION}")
-\`\`\`
+> [!IMPORTANT]  
+> Installation is only supported via Bzlmod!
 
 ### Install from Git
 
 \`\`\`starlark
 bazel_dep(name = "bzlparty_rules_quickjs")
+
 git_override(
     module_name = "bzlparty_rules_quickjs",
     remote = "git@github.com:bzlparty/rules_quickjs.git",
@@ -44,10 +32,22 @@ git_override(
 )
 \`\`\`
 
+### Install from Archive
+
+\`\`\`starlark
+bazel_dep(name = "bzlparty_rules_quickjs")
+
+archive_override(
+    module_name = "bzlparty_rules_quickjs",
+    urls = "https://github.com/bzlparty/rules_quickjs/releases/download/${TAG}/${RULES_ARCHIVE}",
+    strip_prefix = "${PREFIX}",
+    integrity = "sha256-${RULES_SHA}",
+)
+\`\`\`
+
 ## Checksums
 
-*${BINS_ARCHIVE}*: ${BINS_SHA}
-*${RULES_ARCHIVE}*: ${RULES_SHA}
+*${RULES_ARCHIVE}* ${RULES_SHA}
 
 EOF
 
