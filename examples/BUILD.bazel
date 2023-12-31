@@ -21,6 +21,14 @@ generate_message(
     message = "Hello, World",
 )
 
+qjs_binary(
+    name = "read_file",
+    args = ["$(location :msg)"],
+    data = [":msg"],
+    entry_point = ":read_file.js",
+    qjs_args = ["--std"],
+)
+
 diff_test(
     name = "generate_message_test",
     file1 = ":msg",

@@ -16,10 +16,11 @@ def _qjs_binary_impl(ctx):
         output = launcher,
         content = """
 #!/usr/bin/env bash
-{binary} {entry_point} $@
+{binary} {qjs_args} {entry_point} $@
       """.format(
             binary = ctx.file._binary.path,
             entry_point = entry_point.path,
+            qjs_args = " ".join(ctx.attr.qjs_args),
         ),
         is_executable = True,
     )
@@ -52,6 +53,10 @@ _ATTRS = {
     "entry_point": attr.label(
         mandatory = True,
         allow_single_file = True,
+    ),
+    "qjs_args": attr.string_list(
+        doc = "List of arguments passed to the qjs binary",
+        default = [],
     ),
     "_binary": attr.label(
         default = "@bzlparty_quickjs//:qjs",
