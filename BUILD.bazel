@@ -11,6 +11,7 @@ buildifier(
 
 buildifier_test(
     name = "lint",
+    size = "small",
     lint_mode = "warn",
     mode = "check",
     no_sandbox = True,
