@@ -1,5 +1,5 @@
 load("@bazel_skylib//rules:diff_test.bzl", "diff_test")
-load("//quickjs:qjs.bzl", "qjs_binary")
+load("//quickjs:qjs.bzl", "qjs_binary", "qjs_test")
 load(":generate.bzl", "generate_message")
 
 qjs_binary(
@@ -33,4 +33,10 @@ diff_test(
     name = "generate_message_test",
     file1 = ":msg",
     file2 = ":generate_message.txt",
+)
+
+qjs_test(
+    name = "test",
+    entry_point = ":test.js",
+    qjs_args = ["--std"],
 )

@@ -103,3 +103,9 @@ qjs_binary = rule(
     attrs = _ATTRS,
     executable = True,
 )
+
+qjs_test = rule(
+    _qjs_binary_impl,
+    attrs = _ATTRS,
+    test = True,
+)
