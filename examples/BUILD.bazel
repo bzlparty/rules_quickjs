@@ -7,6 +7,15 @@ qjs_binary(
     entry_point = ":hello_world.js",
 )
 
+qjs_binary(
+    name = "print_args",
+    args = [
+        "--arg1",
+        "from_rule",
+    ],
+    entry_point = ":print_args.js",
+)
+
 generate_message(
     name = "msg",
     message = "Hello, World",

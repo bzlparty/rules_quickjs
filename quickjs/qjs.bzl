@@ -15,7 +15,8 @@ def _qjs_binary_impl(ctx):
     ctx.actions.write(
         output = launcher,
         content = """
-{binary} {entry_point}
+#!/usr/bin/env bash
+{binary} {entry_point} $@
       """.format(
             binary = ctx.file._binary.path,
             entry_point = entry_point.path,
