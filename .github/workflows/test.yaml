@@ -49,11 +49,6 @@ jobs:
             ~/.cache/bazel-repo
           key: bazel-cache-${{ hashFiles('**/BUILD.bazel', '**/*.bzl', 'WORKSPACE') }}
           restore-keys: bazel-cache-
-      - name: bazel version
-        working-directory: ${{ matrix.folder }}
-        env:
-          USE_BAZEL_VERSION: ${{ matrix.bazelversion }}
-        run: bazel version
       - name: bazel test //...
         working-directory: ${{ matrix.folder }}
         env:
