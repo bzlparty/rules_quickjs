@@ -1,6 +1,12 @@
+load("@bazel_skylib//rules:build_test.bzl", "build_test")
 load("@bzlparty_rules_quickjs//quickjs:qjs.bzl", "qjs_binary")
 
 qjs_binary(
     name = "info",
     entry_point = ":info.js",
+)
+
+build_test(
+    name = "info_test",
+    targets = [":info"],
 )
