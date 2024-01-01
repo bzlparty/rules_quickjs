@@ -33,6 +33,14 @@ Run `qjs` from Bazel:
 bazel run @bzlparty_quickjs//:qjs
 ```
 
+## Development
+
+Install git hooks:
+
+```bash
+pre-commit install
+```
+
 ## License
 
 [GNU GPL 3.0](/LICENSE)
