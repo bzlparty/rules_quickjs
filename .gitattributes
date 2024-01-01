@@ -1,5 +1,6 @@
-*.sh        export-ignore
-.bazel*     export-ignore
-.git*       export-ignore
-e2e         export-ignore
-examples    export-ignore
+*.sh                  export-ignore
+.bazel*               export-ignore
+.git*                 export-ignore
+e2e                   export-ignore
+examples              export-ignore
+quickjs/*_test.bzl    export-ignore

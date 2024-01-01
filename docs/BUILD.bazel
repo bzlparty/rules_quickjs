@@ -5,4 +5,6 @@ stardoc_with_diff_test(
     bzl_library_target = "//quickjs:qjs",
 )
 
-update_docs()
+update_docs(
+    tags = ["manual"],
+)
