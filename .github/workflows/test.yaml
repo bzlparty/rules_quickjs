@@ -35,7 +35,6 @@ jobs:
     strategy:
       matrix:
         bazelversion:
-          - 6.4.0
           - 7.0.0
         folder:
           - "."
