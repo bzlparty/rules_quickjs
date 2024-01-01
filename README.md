@@ -5,6 +5,9 @@
 This project brings [quickjs-ng/quickjs](https://github.com/quickjs-ng/quickjs) to Bazel!
 Inspired by (and based on) [rules_js](https://github.com/aspect-build/rules_js), it lets you run JavaScript with `qjs` under Bazel.
 
+> [!NOTE]
+> Since the archives taken from quickjs-ng only include the interpreter binary, there is no support for the QuickJS compiler (`qjsc`), yet.
+
 ## Installation
 
 See install instructions on the [release page](https://github.com/bzlparty/rules_quickjs/releases).
