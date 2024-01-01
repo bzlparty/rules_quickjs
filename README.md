@@ -25,6 +25,8 @@ qjs_binary(
 )
 ```
 
+See the [documentation](/docs/qjs.md) for more details.
+
 Run `qjs` from Bazel:
 
 ```bash
