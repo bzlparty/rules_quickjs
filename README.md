@@ -1,5 +1,7 @@
 # Bazel Rules for QuickJS
 
+[![Test](https://github.com/bzlparty/rules_quickjs/actions/workflows/test.yaml/badge.svg?branch=main&event=push)](https://github.com/bzlparty/rules_quickjs/actions/workflows/test.yaml)
+
 ## Installation
 
 See install instructions on the [release page](https://github.com/bzlparty/rules_quickjs/releases).
