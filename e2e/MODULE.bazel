@@ -1,0 +1,8 @@
+module(name = "bzlparty_project_name_e2e")
+
+bazel_dep(name = "bazel_skylib", version = "1.5.0")
+bazel_dep(name = "bzlparty_project_name")
+local_path_override(
+    module_name = "bzlparty_project_name",
+    path = "..",
+)
