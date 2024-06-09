@@ -43,4 +43,4 @@ pre-commit install
 
 ## License
 
-[GNU GPL 3.0](/LICENSE)
+[GNU LGPL 3.0](/LICENSE)
