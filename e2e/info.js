@@ -1,3 +1,3 @@
-import { platform } from "os"
+import { platform } from "os";
 
-print(`PLATFORM: ${platform}`)
+print(`PLATFORM: ${platform}`);
