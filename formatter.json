@@ -1,0 +1,20 @@
+{
+  "biome": {
+    "files": ["**/*.json", "**/*.js"],
+    "check": "format",
+    "fix": "format --write"
+  },
+  "buildifier": {
+    "files": ["**/*.bzl", "**/*.bazel"],
+    "check": "-mode=check -lint=warn",
+    "fix": "-mode=fix -lint=fix"
+  },
+  "shellcheck": {
+    "files": ["**/*.sh", "**/*.bash"],
+    "check": "--severity=warning"
+  },
+  "typos": {
+    "files": ["**/*"],
+    "check": "--format=brief"
+  }
+}

@@ -4,11 +4,21 @@ module(
     compatibility_level = 1,
 )
 
-bazel_dep(name = "bazel_skylib", version = "1.5.0")
-bazel_dep(name = "aspect_bazel_lib", version = "2.1.0")
-bazel_dep(name = "aspect_rules_js", version = "1.34.1")
+bazel_dep(name = "platforms", version = "0.0.10")
+bazel_dep(name = "bazel_skylib", version = "1.7.1")
+bazel_dep(name = "aspect_bazel_lib", version = "2.7.8")
+bazel_dep(name = "aspect_rules_js", version = "2.0.0-rc6")
+bazel_dep(name = "bzlparty_tools", version = "0.4.0")
 
-quickjs_extension = use_extension("//quickjs:extensions.bzl", "quickjs_extension")
-use_repo(quickjs_extension, "bzlparty_quickjs")
+rules_quickjs_toolchains = use_extension("@bzlparty_rules_quickjs//:extensions.bzl", "toolchains")
+rules_quickjs_toolchains.qjs()
+use_repo(rules_quickjs_toolchains, "qjs")
+
+register_toolchains("@qjs//:all")
+
+#ifndef _BZLPARTY_RELEASE_
+tools = use_extension("@bzlparty_tools//:extensions.bzl", "tools", dev_dependency = True)
+use_repo(tools, "biome", "shellcheck", "typos")
 
 bazel_dep(name = "buildifier_prebuilt", version = "6.4.0", dev_dependency = True)
+#endif

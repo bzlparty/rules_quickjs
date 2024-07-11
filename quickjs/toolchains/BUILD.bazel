@@ -1,0 +1,46 @@
+load("@bzlparty_tools//lib:defs.bzl", "multi_platform_assets")
+
+VERSION = "v0.5.0"
+
+SUPPORTED_PLATFORMS = [
+    "darwin_amd64",
+    "linux_amd64",
+    "linux_arm64",
+    "windows_amd64",
+]
+
+GITHUB_URL = "https://github.com/quickjs-ng/quickjs/releases/download/%s" % VERSION
+
+multi_platform_assets(
+    name = "qjs",
+    assets_file = "qjs_assets.bzl",
+    binary = "qjs",
+    darwin_ext = "",
+    linux_ext = "",
+    platforms = SUPPORTED_PLATFORMS,
+    platforms_map = {
+        "darwin_amd64": "darwin",
+        "linux_amd64": "linux-x86_64",
+        "linux_arm64": "linux-aarch64",
+        "windows_amd64": "windows-x86_64",
+    },
+    url = "%s/qjs-{platform}{ext}" % GITHUB_URL,
+    windows_ext = ".exe",
+)
+
+multi_platform_assets(
+    name = "qjsc",
+    assets_file = "qjsc_assets.bzl",
+    binary = "qjsc",
+    darwin_ext = "",
+    linux_ext = "",
+    platforms = SUPPORTED_PLATFORMS,
+    platforms_map = {
+        "darwin_amd64": "darwin",
+        "linux_amd64": "linux-x86_64",
+        "linux_arm64": "linux-aarch64",
+        "windows_amd64": "windows-x86_64",
+    },
+    url = "%s/qjsc-{platform}{ext}" % GITHUB_URL,
+    windows_ext = ".exe",
+)

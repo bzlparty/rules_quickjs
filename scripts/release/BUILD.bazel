@@ -1,0 +1,51 @@
+load("@bazel_skylib//rules:write_file.bzl", "write_file")
+load(
+    "@bzlparty_tools//lib:defs.bzl",
+    "dcomment",
+    "git_archive",
+    "release_notes",
+    "versioned_module_bazel",
+)
+
+write_file(
+    name = "toolchains_build_bazel",
+    out = "toolchains_BUILD.bazel",
+    content = ["""\
+exports_files(["qjs_assets.bzl", "qjsc_assets.bzl"], visibility = ["//visibility:public"])
+"""],
+    tags = ["manual"],
+)
+
+versioned_module_bazel(
+    name = "versioned_module_bazel",
+    out = "versioned_MODULE.bazel",
+)
+
+dcomment(
+    name = "root_module_bazel",
+    src = ":versioned_module_bazel",
+    out = "root_MODULE.bazel",
+    defines = ["_BZLPARTY_RELEASE_PRIVATE_"],
+)
+
+dcomment(
+    name = "root_build_bazel",
+    src = "//:BUILD.bazel",
+    out = "root_BUILD.bazel",
+    defines = ["_BZLPARTY_RELEASE_PRIVATE_"],
+)
+
+git_archive(
+    name = "git_archive",
+    package_name = "rules_quickjs",
+    virtual_files = {
+        ":root_BUILD.bazel": "BUILD.bazel",
+        ":root_MODULE.bazel": "MODULE.bazel",
+        ":toolchains_build_bazel": "toolchains/BUILD.bazel",
+    },
+)
+
+release_notes(
+    name = "release_notes",
+    package = "rules_quickjs",
+)

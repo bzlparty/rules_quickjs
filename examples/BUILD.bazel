@@ -1,5 +1,5 @@
 load("@bazel_skylib//rules:diff_test.bzl", "diff_test")
-load("//quickjs:qjs.bzl", "qjs_binary", "qjs_test")
+load("//quickjs:defs.bzl", "qjs_binary", "qjs_test")
 load(":generate.bzl", "generate_message")
 
 qjs_binary(

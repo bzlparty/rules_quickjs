@@ -1,6 +1,6 @@
 module(name = "bzlparty_rules_quickjs_e2e")
 
-bazel_dep(name = "bazel_skylib", version = "1.5.0")
+bazel_dep(name = "bazel_skylib", version = "1.7.1")
 bazel_dep(name = "bzlparty_rules_quickjs")
 local_path_override(
     module_name = "bzlparty_rules_quickjs",

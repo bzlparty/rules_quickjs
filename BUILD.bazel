@@ -1,29 +1,50 @@
-load("@buildifier_prebuilt//:rules.bzl", "buildifier", "buildifier_test")
+load("@bzlparty_tools//lib:defs.bzl", "formatter", "formatter_test")
+load("@rules_license//rules:license.bzl", "license")
 
-buildifier(
+package(
+    default_applicable_licenses = [":license"],
+    default_visibility = ["//visibility:public"],
+)
+
+license(
+    name = "license",
+    license_kinds = [
+        "@rules_license//licenses/spdx:LGPL-3.0-or-later",
+    ],
+    license_text = "LICENSE",
+)
+
+exports_files([
+    "LICENSE",
+    "MODULE.bazel",
+    "extensions.bzl",
+])
+
+#ifndef _BZLPARTY_RELEASE_
+formatter(
     name = "format",
-    exclude_patterns = [
-        "./.git/*",
-    ],
-    lint_mode = "fix",
+    config = ":formatter.json",
     mode = "fix",
+    tools = {
+        "@biome": "biome",
+        "@buildifier_prebuilt//:buildifier": "buildifier",
+    },
 )
 
-buildifier_test(
-    name = "lint",
-    size = "small",
-    lint_mode = "warn",
+formatter_test(
+    name = "check",
+    config = ":formatter.json",
     mode = "check",
-    no_sandbox = True,
-    tags = ["manual"],
-    workspace = "//:WORKSPACE",
-)
-
-test_suite(
-    name = "setup",
-    tags = ["manual"],
-    tests = [
-        ":lint",
-        "//docs:update_test",
+    tags = [
+        "external",
+        "no-cache",
+        "no-sandbox",
     ],
+    tools = {
+        "@biome": "biome",
+        "@shellcheck": "shellcheck",
+        "@typos": "typos",
+        "@buildifier_prebuilt//:buildifier": "buildifier",
+    },
 )
+#endif

@@ -17,7 +17,7 @@ See install instructions on the [release page](https://github.com/bzlparty/rules
 In a `BUILD.bazel` file:
 
 ```starlark
-load("@bzlparty_rules_quickjs//quickjs:qjs.bzl", "qjs_binary")
+load("@bzlparty_rules_quickjs//quickjs:defs.bzl", "qjs_binary")
 
 qjs_binary(
     name = "index",

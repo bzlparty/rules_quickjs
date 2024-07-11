@@ -5,6 +5,6 @@ def generate_message(name, message):
     native.genrule(
         name = name,
         outs = ["%s.out" % name],
-        cmd = "$(locations @bzlparty_quickjs//:qjs) --eval 'console.log(\"%s\")' > $(OUTS)" % message,
-        tools = ["@bzlparty_quickjs//:qjs"],
+        cmd = "$(locations @qjs//:qjs) --eval 'console.log(\"%s\")' > $(OUTS)" % message,
+        tools = ["@qjs//:qjs"],
     )

@@ -1,6 +1,9 @@
-*.sh                  export-ignore
-.bazel*               export-ignore
-.git*                 export-ignore
-e2e                   export-ignore
-examples              export-ignore
-quickjs/*_test.bzl    export-ignore
+.bazel*                     export-ignore
+.git*                       export-ignore
+.pre-commit-confi.yaml      export-ignore
+formatter.json              export-ignore
+biome.json                  export-ignore
+e2e                         export-ignore
+examples                    export-ignore
+quickjs/*_test.bzl          export-ignore
+scripts                     export-ignore

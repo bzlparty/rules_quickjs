@@ -1,4 +1,5 @@
 bazel-*
+dist
 *.tar.gz
 release_notes.md
 MODULE.bazel.lock
