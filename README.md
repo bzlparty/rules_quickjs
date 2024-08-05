@@ -1,12 +1,10 @@
 # Bazel Rules for QuickJS
 
 [![Test](https://github.com/bzlparty/rules_quickjs/actions/workflows/test.yaml/badge.svg?branch=main&event=push)](https://github.com/bzlparty/rules_quickjs/actions/workflows/test.yaml)
+[![Release](https://img.shields.io/github/v/release/bzlparty/rules_quickjs?label=Release)](https://github.com/bzlparty/rules_quickjs/releases/latest)
 
 This project brings [quickjs-ng/quickjs](https://github.com/quickjs-ng/quickjs) to Bazel!
 Inspired by (and based on) [rules_js](https://github.com/aspect-build/rules_js), it lets you run JavaScript with `qjs` under Bazel.
-
-> [!NOTE]
-> Since the archives taken from quickjs-ng only include the interpreter binary, there is no support for the QuickJS compiler (`qjsc`), yet.
 
 ## Installation
 
@@ -25,7 +23,7 @@ qjs_binary(
 )
 ```
 
-See the [documentation](/docs/qjs.md) for more details.
+See the [rules documentation](/docs/rules.md) for more details.
 
 Run `qjs` from Bazel:
 
@@ -33,14 +31,10 @@ Run `qjs` from Bazel:
 bazel run @bzlparty_quickjs//:qjs
 ```
 
-## Development
-
-Install git hooks:
-
-```bash
-pre-commit install
-```
-
 ## License
 
-[GNU LGPL 3.0](/LICENSE)
+Copyright Contributors to the bzlparty project.
+
+Unless otherwise specified, source code in this repository is licensed under the GNU Lesser General Public License, Version 3 or later (LGPL-3.0-or-later). A copy is included in the `LICENSE` file.
+
+Other licenses may be specified as well for certain files or where third-party components are used.
